@@ -150,17 +150,33 @@ VALUES
     FROM unidades_medida
     WHERE sigla = 'mL'));
 
--- 5. Verificar dados inseridos
+
+-- 7. Popular assistidas
+INSERT INTO assistidas (
+  nome, cpf, rg, idade, data_nascimento, nacionalidade, estado_civil, profissao, escolaridade, status,
+  logradouro, bairro, numero, cep, estado, cidade, telefone, telefone_contato
+) VALUES
+('Maria das Dores', '12345678900', 'MG-12345678', 42, '1983-09-15', 'Brasileira', 'Solteira', 'Cozinheira', 'Fundamental Completo', 'Ativa',
+ 'Rua das Flores', 'Centro', '120', '30100-000', 'MG', 'Belo Horizonte', '31999998888', '31988887777'),
+('Ana Paula Lima', '98765432199', 'SP-98765432', 36, '1988-02-20', 'Brasileira', 'Casada', 'Auxiliar de Limpeza', 'Médio Incompleto', 'Em Tratamento',
+ 'Avenida Central', 'Jardim das Palmeiras', '500', '04000-200', 'SP', 'São Paulo', '11912345678', '11934567890'),
+('Jéssica Andrade', '11223344556', 'RJ-33445566', 29, '1995-03-10', 'Brasileira', 'Solteira', 'Manicure', 'Médio Completo', 'Ativa',
+ 'Rua das Acácias', 'Lapa', '88', '20220-330', 'RJ', 'Rio de Janeiro', '21999887766', '21988776655'),
+('Carla Menezes', '22334455667', 'BA-44556677', 40, '1984-07-12', 'Brasileira', 'Divorciada', 'Doméstica', 'Fundamental Completo', 'Inativa',
+ 'Rua do Sossego', 'São Caetano', '22', '40200-000', 'BA', 'Salvador', '71987654321', '71996543210'),
+('Renata Oliveira', '33445566778', 'RS-55667788', 33, '1991-01-25', 'Brasileira', 'Casada', 'Atendente', 'Médio Completo', 'Em Tratamento',
+ 'Avenida Brasil', 'Centro', '305', '90010-000', 'RS', 'Porto Alegre', '51991234567', '51993456789'),
+('Tatiane Soares', '44556677889', 'PE-66778899', 27, '1997-11-04', 'Brasileira', 'Solteira', 'Vendedora', 'Médio Incompleto', 'Ativa',
+ 'Rua da Aurora', 'Boa Vista', '112', '50050-100', 'PE', 'Recife', '81999887766', '81988776655'),
+('Eliane Costa', '55667788990', 'CE-77889900', 50, '1974-08-08', 'Brasileira', 'Viúva', 'Artesã', 'Fundamental Incompleto', 'Ativa',
+ 'Travessa das Palmeiras', 'Mucuripe', '55', '60165-000', 'CE', 'Fortaleza', '85991234567', '85993456789');
+
+-- 8. Verificar dados inseridos
 SELECT 'Dados inseridos com sucesso!' as status;
-SELECT 'Tipos de despesas:', COUNT(*) as total
-FROM tipos_despesas;
-SELECT 'Doadores:', COUNT(*) as total
-FROM doadores;
-SELECT 'Despesas:', COUNT(*) as total
-FROM despesas;
-SELECT 'Doações:', COUNT(*) as total
-FROM doacoes;
-SELECT 'Medicamentos:', COUNT(*) as total
-FROM medicamentos;
-SELECT 'Unidades de Medida:', COUNT(*) as total
-FROM unidades_medida;
+SELECT 'Tipos de despesas:', COUNT(*) as total FROM tipos_despesas;
+SELECT 'Doadores:', COUNT(*) as total FROM doadores;
+SELECT 'Despesas:', COUNT(*) as total FROM despesas;
+SELECT 'Doações:', COUNT(*) as total FROM doacoes;
+SELECT 'Unidades de medida:', COUNT(*) as total FROM unidades_medida;
+SELECT 'Medicamentos:', COUNT(*) as total FROM medicamentos;
+SELECT 'Assistidas:', COUNT(*) as total FROM assistidas;
